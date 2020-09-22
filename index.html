@@ -172,14 +172,14 @@
                 </figure>
               </article>
             </div>
-            <!-- <div class="tile is-parent">
+            <div class="tile is-parent">
               <article class="tile is-child notification">
-                <p class="title">Project title</p>
+                <p class="title">Indecisive</p>
                 <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-3-modal" src="img/project-3-cover.png">
+                  <img class="modal-trigger" data-target="project-3-modal" src="src/dist/img/indecisive/indecisive icon.png">
                 </figure>
               </article>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -395,11 +395,14 @@
             <img src="src/dist/img/rcmoss/rcschem.png">
           </figure>
           <figure class="image is-4by3 carousel-cell">
-              <img src="src/dist/img/rcmoss/rcblend.png">
-            </figure>
-            <figure class="image is-4by3 carousel-cell">
-                <img src="src/dist/img/rcmoss/rcrem.png">
-              </figure>
+            <img src="src/dist/img/rcmoss/rcblend.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+              <img src="src/dist/img/rcmoss/rcrem.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+              <img src="src/dist/img/rcmoss/rcspread.png">
+          </figure>
         </div>
 
         <div class="content">
@@ -435,33 +438,50 @@
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
+        <p class="modal-card-title">Indecisive</p>
         <button class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-        <div id="project-3-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
+          <div style="text-align:center;">
+            <video style="text-align:center;" width="190" height="300" controls>
+            <source src="src/dist/img/indecisive/indecisive.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          </div>
 
         <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
+          <p>
+              I'm living with two friends, and they’re the nicest people ever, but 
+              when it comes to making decisions, they’re a little too nice. 
+              A few days ago, they were choosing where to get dinner — to clarify, without me — 
+              and they asked me what they should get! Then, we spent over an hour choosing a movie to 
+              watch and ended up assigning and picking random numbers. <br><br>
+
+              I found myself wishing that there was an easy way to randomize decisions and decided 
+              to build a basic app for myself. <hr>
+
+              The app opens with a list of Decisions. Navigating into each allows the user 
+              to enter choices separated by new lines. Click the Decide button and a random choice 
+              is returned to you! <br>
+
+              The user can add new decisions to the list, delete from the list, and edit existing 
+              names and choices.  <hr>
+
+              <b>Data Persistance</b><br>
+              The toughest part of this project was implementing data persistence with NSCoding. 
+              I was able to let data persist across multiple runs of the app by creating a persistent 
+              path on the file system and adding methods to save and load the data. 
+              When the app launches, it loads existing data and when data is modified, the app saves it. 
+              
+              <br><br>This means the decisions and choice lists inputted will be saved for the next time 
+              you use the app.  It will remember the restaurants my friends were choosing from this 
+              week to be randomized again for next week.
+            <br><br>Project Article on <a href="https://app.showwcase.com/project/7166/Indecisive-:-iOS-App-(Swift)">Showwcase</a>
+          </p>
           <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
+            <span class="tag">Swift</span>
+            <span class="tag">Xcode</span>  
+            <span class="tag">ios app design</span>
           </div>
         </div>
 
