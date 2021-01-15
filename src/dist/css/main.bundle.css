@@ -517,8 +517,7 @@ textarea {
 }
 
 html {
-    box-sizing: border-box;
-    scroll-behavior: smooth
+    box-sizing: border-box
 }
 
 *,
@@ -4305,7 +4304,7 @@ a.tag:hover {
 
 .title {
     color: #363636;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 1.125
 }
@@ -4324,8 +4323,7 @@ a.tag:hover {
 }
 
 .title.is-1 {
-    font-size: 3rem;
-    font-weight: normal
+    font-size: 3rem
 }
 
 .title.is-2 {
@@ -6714,28 +6712,6 @@ screen and (min-width:769px) {
     flex-shrink: 1;
     overflow: auto;
     padding: 20px
-}
-
-#smart-scroll {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 1000;
-}
-
-.is-hidden {
-    opacity: 0;
-    /* -webkit-transform: translate(0, -60px); */
-    transition: 1s ease;
-}
-
-.is-visible {
-    opacity: 3;
-    /* -webkit-transform: translate(0, 0); */
-    transition: 4s ease;
-    transition: background-color 0.3s ease;
-    background-color: green;
 }
 
 .navbar {
@@ -10780,7 +10756,7 @@ screen and (min-width:769px) {
 
 .footer {
     background-color: #fafafa;
-    padding: 2rem 1.5rem
+    padding: 3rem 1.5rem
 }
 
 .section {
