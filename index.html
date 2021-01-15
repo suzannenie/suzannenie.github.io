@@ -7,59 +7,124 @@
     <link rel="icon" href="src/dist/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="src/dist/css/main.bundle.css">
     <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 10;
+        var navbarHeight = -80;
+
+        $(window).scroll(function(event) {
+            console.log("scrolled")
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            console.log(st, lastScrollTop, navbarHeight)
+
+            // Make sure they scroll more than delta
+            if (Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight) {
+                // Scroll Down
+                $("#smart-scroll").slideUp("fast");
+            } else {
+                // Scroll Up
+                if (st + $(window).height() < $(document).height()) {
+                    $("#smart-scroll").slideDown("fast");
+                }
+            }
+
+            lastScrollTop = st;
+        }
+    </script>
 </head>
 
 <body>
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <div class="navbar-item is-hidden-desktop">
-                <a href="https://github.com/suzannenie" class="icon is-large has-text-light">
-                    <i class="fab fa-2x fa-github"></i>
-                </a>
-            </div>
-            <div class="navbar-item is-hidden-desktop">
-                <a href="https://app.showwcase.com/profile/suzannenie" class="icon is-large has-text-light">
-                    <i class="fas fa-2x fa-globe"></i>
-                </a>
-            </div>
-        </div>
-        <div class="navbar-menu">
+    <nav class="navbar is-primary nav-down" role="navigation" aria-label="main navigation">
+        <div class="navbar-menu is-black">
             <div class="navbar-end">
                 <div class="navbar-item">
                     <a href="https://github.com/suzannenie" class="icon is-large has-text-light">
                         <i class="fab fa-2x fa-github"></i>
+                        <div class="navbar-item">
+                            <a href="https://www.linkedin.com/in/suzanne-nie-816468192/" class="icon is-large has-text-light">
+                                <i class="fab fa-2x fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                </div>
+            </div>
+    </nav>
+    <div id="smart-scroll">
+        <nav class="navbar is-primary nav-down" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <div class="navbar-item is-hidden-desktop">
+                    <a href="https://github.com/suzannenie" class="icon is-large has-text-light">
+                        <i class="fab fa-2x fa-github"></i>
                     </a>
                 </div>
-                <div class="navbar-item">
-                    <a href="https://www.linkedin.com/in/suzanne-nie-816468192/" class="icon is-large has-text-light">
-                        <i class="fab fa-2x fa-linkedin-in"></i>
+                <div class="navbar-item is-hidden-desktop">
+                    <a href="https://app.showwcase.com/profile/suzannenie" class="icon is-large has-text-light">
+                        <i class="fas fa-2x fa-globe"></i>
                     </a>
                 </div>
             </div>
-        </div>
-    </nav>
+
+            <div class="navbar-menu is-black">
+                <div class="navbar-item">
+                    <a href="#about" class="has-text-light"><strong>About Me</strong></a>
+                </div>
+                <div class="navbar-item">
+                    <a href="#experience" class="has-text-light"><strong>Experience</strong></a>
+                </div>
+                <div class="navbar-item">
+                    <a href="#projects" class="has-text-light"><strong>Projects</strong></a>
+                </div>
+                <div class="navbar-item">
+                    <a href="#contact" class="has-text-light"><strong>Contact</strong></a>
+                </div>
+                <div class="navbar-item">
+                    <a href="src/dist/docs/resume.pdf" class="has-text-light">
+                        <i class="fas fa-file-pdf"></i> <strong>Resume</strong>
+                    </a>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <a href="https://github.com/suzannenie" class="icon is-large has-text-light">
+                            <i class="fab fa-2x fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="https://www.linkedin.com/in/suzanne-nie-816468192/" class="icon is-large has-text-light">
+                            <i class="fab fa-2x fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
 
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
-                <!-- <div class="level-item has-text-centered">
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="src/dist/img/me-big.png">
-            </figure>
-          </div> -->
                 <div class="columns has-text-centered">
                     <div class="column">
                         <h1 class="title is-1" style="margin-bottom:.2em">
                             Suzanne Nie
                         </h1>
-                        <!-- <h2 class="subtitle">
-              Student at Carnegie Mellon University
-            </h2> -->
-                        <p style="padding-top:0em; font-size:.9rem">
-                            <a href="src/dist/docs/resume.pdf" class="icon has-text-light">
-                                <i class="fas fa-file-pdf"></i> <strong>Resume</strong>
-                            </a>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -76,7 +141,7 @@
         </div>
     </section>
 
-    <section class="section" style="clear:both;">
+    <section class="section" style="clear:both;" id="experience">
         <div class="container">
             <h1 class="title">Experience</h1>
             <hr />
@@ -170,7 +235,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="education">
         <div class="container">
             <h1 class="title">Education</h1>
             <hr />
@@ -180,13 +245,13 @@
                         <p class="title is-4">Carnegie Mellon University</p>
                         <div>
                             <p class="subtitle is-6">B.S. in Statistics and Machine Learning <br>
-                                <time datetime="2019-8">August 2019</time> - <time datetime="2023-5">Expected May 2023</time> <br> GPA: 4.00, Dean’s List with High Honors</p>
+                                <time datetime="2019-8">August 2019</time> - <time datetime="2023-5">Expected May 2023</time> <br> GPA: 3.94/4, Dean’s List with High Honors (2020, 2021)</p>
                         </div>
                     </div>
                     <div class="content">
-                        <b>Relevant Coursework:</b> Concepts of Math, Methods for Statistics and Data Science, Fundamentals of Programming and Comp Sci, Calculus in Three Dimensions, Principles of Imperative Computation, Intro to Physical Computing, Matrices
-                        and Linear Transformations, Intro to Computer Systems <br>
-                        <b>In Progress:</b> Great Ideas in Theoretical Computer Science, Intro to Probability Theory, Interaction Design Overview, Principles of Functional Programming
+                        <b>Relevant Coursework:</b> Concepts of Math, Methods for Statistics and Data Science, Calc in 3D, Principles of Imperative Computation, Intro to Physical Computing, Matrices and Linear Transformations, Intro to Computer Systems,
+                        Great Ideas in Theoretical Computer Science, Intro to Probability Theory, Interaction Design Overview, Principles of Functional Programming <br>
+                        <b>In Progress:</b> Statistical Computation, Intro to Statistical Inference, Intro to ML, AI Problem Solving
                     </div>
                 </div>
             </div>
@@ -208,7 +273,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="projects">
         <div class="container">
             <h1 class="title">Projects</h1>
             <hr />
@@ -275,7 +340,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="skills">
         <div class="container">
             <h1 class="title">Skills</h1>
             <hr />
@@ -307,59 +372,25 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <h1 class="title">Activities</h1>
-            <hr />
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        <ul>
-                            <li>Student Dormitory Council Head Driver</li>
-                            <ul>
-                                <li>Responsible for driver safety and organization</li>
-                                <li>Plan and lead social events</li>
-                            </ul>
-                            <li>Data Science for Social Good: Project for Data Visualization and User Experience with the Department of the Interior</li>
-                            <ul>
-                                <li>Participated in individual and collaborative user testing </li>
-                                <li>Designed and delivered notes about new visualizations based on our insights</li>
-                            </ul>
-                            <li>CMU Club Badminton Team</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
+    <section class="section" id="contact">
         <div class="container">
             <h1 class="title">Contact</h1>
             <hr />
             <nav class="level">
                 <div class="level-item has-text-centered">
                     <div>
-                        <a href="https://github.com/suzannenie" class="icon is-large">
-                            <i class="fab fa-2x fa-github"></i>
-                        </a>
-                        <p class="heading"><a href="https://github.com/suzannenie">github.com/suzannenie</a></p>
-                    </div>
-                </div>
-                <!-- <div class="level-item has-text-centered">
-          <div>
-            <a href="https://app.showwcase.com/profile/suzannenie" class="icon is-large">
-              <i class="fas fa-2x fa-globe"></i>
-            </a>
-            <p class="heading"><a href="https://app.showwcase.com/profile/suzannenie">app.showwcase/suzannenie</a></p>
-          </div>
-        </div> -->
-                <div class="level-item has-text-centered">
-                    <div>
                         <a href="mailto:suzannen@andrew.cmu.edu" class="icon is-large">
                             <i class="fas fa-2x fa-envelope"></i>
                         </a>
                         <p class="heading"><a href="mailto:suzannen@andrew.cmu.edu">suzannen@andrew.cmu.edu</a></p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <a href="https://github.com/suzannenie" class="icon is-large">
+                            <i class="fab fa-2x fa-github"></i>
+                        </a>
+                        <p class="heading"><a href="https://github.com/suzannenie">github.com/suzannenie</a></p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
@@ -633,8 +664,8 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <!-- <a href="https://github.com/mmacneil/devfolio" target="_blank" class="icon has-text-primary">
-          <i class="fab fa-github"></i> <strong>devfolio</strong></a> -->
+                <a href="https://github.com/suzannenie/suzannenie.github.io" target="_blank" class="icon has-text-primary">
+                    <i class="fab fa-github"></i> <strong>suzannenie</strong></a>
             </p>
         </div>
     </footer>

@@ -517,7 +517,8 @@ textarea {
 }
 
 html {
-    box-sizing: border-box
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -6714,9 +6715,17 @@ screen and (min-width:769px) {
     padding: 20px
 }
 
+#smart-scroll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
 .navbar {
     background-color: #fff;
-    min-height: 3.25rem;
+    /* min-height: 3.25rem; */
     position: relative;
     z-index: 30
 }
@@ -10756,7 +10765,7 @@ screen and (min-width:769px) {
 
 .footer {
     background-color: #fafafa;
-    padding: 3rem 1.5rem
+    padding: 2rem 1.5rem
 }
 
 .section {
