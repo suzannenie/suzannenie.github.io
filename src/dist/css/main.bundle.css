@@ -597,7 +597,7 @@ body {
 }
 
 a {
-    color: #00d1b2;
+    color: #49008d;
     cursor: pointer;
     text-decoration: none
 }
@@ -4306,7 +4306,7 @@ a.tag:hover {
 .title {
     color: #363636;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 525;
     line-height: 1.125
 }
 

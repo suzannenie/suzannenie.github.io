@@ -17,7 +17,6 @@
         // console.log(document.getElementById("here").offsetHeight)
 
         $(window).scroll(function(event) {
-            console.log("scrolled")
             didScroll = true;
         });
 
@@ -30,7 +29,7 @@
 
         function hasScrolled() {
             var st = $(this).scrollTop();
-            console.log(st, lastScrollTop, navbarHeight)
+            // console.log(st, lastScrollTop, navbarHeight)
 
             // Make sure they scroll more than delta
             if (Math.abs(lastScrollTop - st) <= delta)
@@ -58,36 +57,38 @@
         <div class="navbar-brand">
             <div class="navbar-item is-hidden-desktop">
                 <div class="navbar-item is-hidden-desktop">
-                    <a href="https://github.com/suzannenie" class="icon is-large has-text-light">
-                        <i class="fab fa-2x fa-github"></i>
-                    </a>
+                    <a href="#about" class="has-text-light"><strong>About</strong></a>
                 </div>
                 <div class="navbar-item is-hidden-desktop">
-                    <a href="https://www.linkedin.com/in/suzanne-nie-816468192/" class="icon is-large has-text-light">
-                        <i class="fab fa-2x fa-linkedin-in"></i>
-                    </a>
+                    <a href="#experience" class="has-text-light"><strong>Experience</strong></a>
+                </div>
+                <div class="navbar-item is-hidden-desktop">
+                    <a href="#projects" class="has-text-light"><strong>Projects</strong></a>
+                </div>
+                <div class="navbar-item is-hidden-desktop">
+                    <a href="#contact" class="has-text-light"><strong>Contact</strong></a>
                 </div>
             </div>
             <div class="navbar-menu is-black">
                 <div class="navbar-end">
-                    <div class="navbar-item">
+                    <div class="navbar-item is-hidden-desktop">
                         <a href="https://github.com/suzannenie" class="icon is-large has-text-light">
                             <i class="fab fa-2x fa-github"></i>
                     </div>
-                    <div class="navbar-item">
+                    <div class="navbar-item is-hidden-desktop">
                         <a href="https://www.linkedin.com/in/suzanne-nie-816468192/" class="icon is-large has-text-light">
                             <i class="fab fa-2x fa-linkedin-in"></i>
                         </a>
                     </div>
                 </div>
             </div>
-
+        </div>
     </nav>
     <div id="smart-scroll">
         <nav class="navbar is-primary nav-down" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <div class="navbar-item is-hidden-desktop">
-                    <a href="#about" class="has-text-light"><strong>About Me</strong></a>
+                    <a href="#about" class="has-text-light"><strong>About</strong></a>
                 </div>
                 <div class="navbar-item is-hidden-desktop">
                     <a href="#experience" class="has-text-light"><strong>Experience</strong></a>
@@ -97,27 +98,12 @@
                 </div>
                 <div class="navbar-item is-hidden-desktop">
                     <a href="#contact" class="has-text-light"><strong>Contact</strong></a>
-                </div>
-                <div class="navbar-item is-hidden-desktop">
-                    <a href="src/dist/docs/resume.pdf" class="has-text-light">
-                        <i class="fas fa-file-pdf"></i> <strong>Resume</strong>
-                    </a>
-                </div>
-                <div class="navbar-item is-hidden-desktop">
-                    <a href="https://github.com/suzannenie" class="icon is-large has-text-light">
-                        <i class="fab fa-2x fa-github"></i>
-                    </a>
-                </div>
-                <div class="navbar-item is-hidden-desktop">
-                    <a href="https://www.linkedin.com/in/suzanne-nie-816468192/" class="icon is-large has-text-light">
-                        <i class="fab fa-2x fa-linkedin-in"></i>
-                    </a>
                 </div>
             </div>
 
             <div class="navbar-menu is-black navbar-brand">
                 <div class="navbar-item">
-                    <a href="#about" class="has-text-light"><strong>About Me</strong></a>
+                    <a href="#about" class="has-text-light"><strong>About</strong></a>
                 </div>
                 <div class="navbar-item">
                     <a href="#experience" class="has-text-light"><strong>Experience</strong></a>
@@ -127,11 +113,6 @@
                 </div>
                 <div class="navbar-item">
                     <a href="#contact" class="has-text-light"><strong>Contact</strong></a>
-                </div>
-                <div class="navbar-item">
-                    <a href="src/dist/docs/resume.pdf" class="has-text-light">
-                        <i class="fas fa-file-pdf"></i> <strong>Resume</strong>
-                    </a>
                 </div>
 
                 <div class="navbar-end">
@@ -155,7 +136,7 @@
             <div class="container">
                 <div class="columns has-text-centered">
                     <div class="column">
-                        <h1 class="title is-1" style="margin-bottom:.2em">
+                        <h1 class="title is-1" style="margin-top:.2em;">
                             Suzanne Nie
                         </h1>
                     </div>
@@ -171,6 +152,9 @@
             <img src="src/dist/img/me-wide.png" style="float:left;height:164px;padding-right:1.5em;padding-bottom:1.5em;">
             <p class="here">Hi, my name is Suzanne, and I'm a sophomore at Carnegie Mellon University majoring in Statistics and Machine Learning. I'm eager to work outside my knowledge set and am always looking for ways to add new technologies to my toolkit. Currently
                 seeking Summer 2021 opportunities! </p>
+            <a href="src/dist/docs/resume.pdf" style="line-height:3em;">
+                <i class="fas fa-file-pdf"></i> <strong>Resume</strong>
+            </a>
         </div>
     </section>
 
