@@ -10,11 +10,11 @@ var $carousels = new Array();
 var rootEl = document.documentElement;
 var $modals = getAll('.modal');
 var $modalTriggers = getAll('.modal-trigger');
-var $modalCloses = getAll('.modal-card-head .delete, .modal-card-foot .button');
+var $modalCloses = getAll('.modal-card-head .delete, .modal-card-foot .button, .closer');
 
 if ($modalTriggers.length > 0) {
-    $modalTriggers.forEach(function ($el) {
-        $el.addEventListener('click', function () {
+    $modalTriggers.forEach(function($el) {
+        $el.addEventListener('click', function() {
             var target = $el.dataset.target;
             openModal(target);
         });
@@ -22,8 +22,8 @@ if ($modalTriggers.length > 0) {
 }
 
 if ($modalCloses.length > 0) {
-    $modalCloses.forEach(function ($el) {
-        $el.addEventListener('click', function () {
+    $modalCloses.forEach(function($el) {
+        $el.addEventListener('click', function() {
             closeModals();
         });
     });
@@ -39,8 +39,7 @@ function openModal(target) {
         // Initialize each carousel one time only
         if ($carousels.length === 0) {
             $carousels.push(initCarousel(carouselId));
-        }
-        else {
+        } else {
             var index = $carousels.findIndex(c => c.element.id == carouselId);
             if (index === -1) {
                 $carousels.push(initCarousel(carouselId));
@@ -50,8 +49,9 @@ function openModal(target) {
 }
 
 function closeModals() {
+    console.log("herlo")
     rootEl.classList.remove('is-clipped');
-    $modals.forEach(function ($el) {
+    $modals.forEach(function($el) {
         $el.classList.remove('is-active');
     });
 }
